@@ -56,7 +56,7 @@ def main(img):
   file_name = img
   model_file = "retrained_graph.pb"
   label_file = "retrained_labels.txt"
-  input_height = 2
+  input_height = 299
   input_width = 299
   input_mean = 128
   input_std = 128
