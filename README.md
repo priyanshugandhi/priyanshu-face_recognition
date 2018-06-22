@@ -50,6 +50,9 @@ Hit the following in CMD/Terminal if you don't have already them installed:
     pip install tensorflow
     pip install opencv-python
 
+Go to https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_alt.xml and download the file  haarcascade_frontalface_alt.xml into your repository.
+    
+
 ###  Usage
 Command-Line Interface
 
@@ -221,6 +224,10 @@ This step will consist of several sub steps:
   
 - Now run the "face-crop.py" program until you fill all the sub-directories inside the images directory wih their 
   respective images. Ensure you put atleast 50-100 images in each subdirectory.
+ 
+ #### Though I have already put the different categories of emotions inside the images directory, but if you want to add more emotions you can use the above steps or use the dataset as it is. It will still give you the result.
+
+  
   
 - Once you have only cleaned images, you are ready to retrain the network. For this purpose I'm using inception_v3 Model
   which is quite accurate. To run the training, hit the got to the parent folder and open 
@@ -229,9 +236,8 @@ This step will consist of several sub steps:
 ```
   python retrain.py --output_graph=retrained_graph.pb --output_labels=retrained_labels.txt --architecture=inception_v3 --image_dir=images
 ```
+- This may take a while depending on your processor and the files named retrained_graph.pb and retrained_labels.txt would be added to your directory.
 
-
-#### Though I have already trained the data and you can find different categories of emotions inside the images directory, but if you want to add more emotions you can use the above steps or use the dataset as it is. It will still give you the result.
 That's it for this Step.
 
 ## STEP 3 - Using Age/Gender classification and then integrating Everything Up
@@ -252,6 +258,16 @@ That's it for this Step.
 There are several ways to use a pre-existing checkpoint to do age or gender classification. By default, the code will 
 simply assume that the image you provided has a face in it, and will run that image through a multi-pass classification 
 using the corners and center.
+
+##### Download the pre-trained age checkpoint for inception from here:
+
+https://drive.google.com/drive/folders/0B8N1oYmGLVGWbDZ4Y21GLWxtV1E
+
+##### Download the pre-trained gender checkpoint for inception from here:
+
+https://drive.google.com/drive/folders/0B8N1oYmGLVGWemZQd3JMOEZvdGs
+
+- After downloading both the files, unzip them into the inception directory.
 
 - Open the main.py program. Inside main.py specify complete path for model_dir_age and model_dir_gender.
 
