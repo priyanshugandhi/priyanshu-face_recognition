@@ -44,7 +44,7 @@ size=4
 classifier = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
 video_capture = cv2.VideoCapture(0)
-path="images1"
+path="datasets"
 images_names=os.listdir(path)
 known_face_encodings=[]
 known_face_names=[]
