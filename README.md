@@ -49,8 +49,7 @@ Hit the following in CMD/Terminal if you don't have already them installed:
 
     pip install tensorflow
     pip install opencv-python
-
-Go to https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_alt.xml and download the file  haarcascade_frontalface_alt.xml into your repository.
+    pip install flask
     
 
 ###  Usage
@@ -61,6 +60,7 @@ import face_recognition
 import cv2
 import dlib
 import tensorflow
+import flask
 ```
 
 Ensure that following commands run fine. If it does you are good to go.
@@ -269,17 +269,26 @@ https://drive.google.com/drive/folders/0B8N1oYmGLVGWemZQd3JMOEZvdGs
 
 - After downloading both the files, unzip them into the inception directory.
 
-- Open the main.py program. Inside main.py specify complete path for model_dir_age and model_dir_gender.
+## There are different functionalities that are provided in this code:
+
+```api_main.py``` This file is basically an API which uses images/videos uploaded from your computer and performs the processing and returns the results in json format.
+
+```streaming_main.py``` This file is used for giving the results for live streaming where opencv is used for accessing the local camera. It'll open a new window of OpenCV and then identifies your Name, Gender, Age and the emotions.
+
+```url_main.py``` This file is used for processing the stream/image/video from url.
+
+
+- Open the file you want to execute. Inside the file specify complete path for model_dir_age and model_dir_gender.
 
 For example: ```tf.app.flags.DEFINE_string('model_dir_age', 'C:/Users/user/priyanshu-face_recognition/inception/22801', 'Model directory (where training data for AGE lives)')```
 
 ```tf.app.flags.DEFINE_string('model_dir_gender', 'C:/Users/user/priyanshu-face_recognition/inception/21936', 'Model directory (where training data for GENDER lives)')```
 
-### Finally, I've put everything under the "main.py" file from where you can get everything.
+### Finally, you just need to execute it from command line and it will give us the desired results.
  
- Now run the "main.py" program by typing the following in CMD/Terminal:
+ For example run the "streaming_main.py" program by typing the following in CMD/Terminal:
  ```
- python main.py
+ python streaming_main.py
  ```
 
 It'll open a new window of OpenCV and then identifies your Name, Gender, Age and the emotions.
