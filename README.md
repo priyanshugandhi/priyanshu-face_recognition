@@ -269,7 +269,7 @@ https://drive.google.com/drive/folders/0B8N1oYmGLVGWemZQd3JMOEZvdGs
 
 - After downloading both the files, unzip them into the inception directory.
 
-## There are different functionalities that are provided in this code:
+### There are different functionalities that are provided in this code:
 
 ```api_main.py``` This file is basically an API which uses images/videos uploaded from your computer and performs the processing and returns the results in json format.
 
@@ -284,7 +284,7 @@ For example: ```tf.app.flags.DEFINE_string('model_dir_age', 'C:/Users/user/priy
 
 ```tf.app.flags.DEFINE_string('model_dir_gender', 'C:/Users/user/priyanshu-face_recognition/inception/21936', 'Model directory (where training data for GENDER lives)')```
 
-### Finally, you just need to execute it from command line and it will give us the desired results.
+##### Finally, you just need to execute it from command line and it will give us the desired results.
  
  For example run the "streaming_main.py" program by typing the following in CMD/Terminal:
  ```
